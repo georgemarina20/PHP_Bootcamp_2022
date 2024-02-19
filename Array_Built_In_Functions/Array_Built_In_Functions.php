@@ -92,15 +92,16 @@ echo "<pre>";
 array_unshift($nums, current($mix), next($mix), next($mix));
 end($mix);
 prev($mix);
-array_push($nums, prev($mix),next($mix), next($mix));
+array_push($nums, prev($mix), next($mix), next($mix));
 print_r($nums);
 echo "</pre>";
 
 $arr = ["A", "B", "C", "D", "E"];
-function my_count($arr) {
+function my_count($arr)
+{
     $count = 0;
     foreach ($arr as $val) {
-        $count++;    
+        $count++;
     }
     return $count;
 }
@@ -139,7 +140,7 @@ echo $res . "<br>";
 
 $chars = ["o", "r", "e", "z", "l", "E"];
 
-for ($i = my_count($chars) - 1;$i >= 0;$i--) {
+for ($i = my_count($chars) - 1; $i >= 0; $i--) {
     echo $chars[$i];
 }
 echo "<br>";
@@ -158,15 +159,15 @@ echo "<br>";
 
 $mix = ["A", "C", "B", 1, 100, 3, 2, 6, 5, 7];
 $numbers = array_filter($mix, 'is_numeric');
-$oddNumbers = array_filter($numbers, fn($num) => $num % 2 !== 0 );
+$oddNumbers = array_filter($numbers, fn($num) => $num % 2 !== 0);
 sort($oddNumbers);
 
 echo "<pre>";
 print_r($oddNumbers);
 echo "</pre>";
 
-
-function customShuffle($array) {
+function customShuffle($array)
+{
     $shuffledArray = [];
     $keys = array_keys($array);
     shuffle($keys);
@@ -186,5 +187,5 @@ echo "</pre>";
 $title = "E&z\$r0 W\$b Sch00&";
 
 // Output
-echo str_replace(["&","0", "$"], ["l", "o", "e"], $title, $rcount) . "<br>";
+echo str_replace(["&", "0", "$"], ["l", "o", "e"], $title, $rcount) . "<br>";
 echo $rcount . "<br>";
